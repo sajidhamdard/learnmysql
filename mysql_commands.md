@@ -46,28 +46,28 @@ ALTER TABLE table_name ADD column_name DATATYPE;
 
 Es command ka use table me specific column se pahal column add karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE table_name ADD current_column_name AFTER new_cloumn_name;
+ALTER TABLE table_name ADD COLUMN current_column_name AFTER new_cloumn_name;
 ~~~
 
 - #### Modify column in table.
 
 Es commad ka use table column ko modify karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE table_name MODIFY column_name DATATYPE;
+ALTER TABLE table_name MODIFY COLUMN column_name DATATYPE;
 ~~~
 
 - #### Rename column in table.
 
 Es command ka use table ke  column ke name ko change karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE table_name RENAME current_column_name TO new_column_name;
+ALTER TABLE table_name RENAME COLUMN current_column_name TO new_column_name;
 ~~~
 
 - #### Drop column in table.
 
 Es command ka use table me column ko delete karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE table_name DROP column_name;
+ALTER TABLE table_name DROP COLUMN column_name;
 ~~~
 
 ### 6. Insert data in table.
