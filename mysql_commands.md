@@ -67,7 +67,7 @@ ALTER TABLE students MODIFY COLUMN Age INTEGER;
 
 Es command ka use table ke  column ke name ko change karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE table_name RENAME COLUMN City TO myCity;
+ALTER TABLE students RENAME COLUMN City TO myCity;
 ~~~
 
 - #### Drop column in table.
@@ -83,7 +83,7 @@ ALTER TABLE students DROP COLUMN City;
 
 Es command ka use table me column name ke sath data insert karane ke liye kiya jata hai.
 ~~~
-INSERT INTO table_name (studentName,fatherName,mobileNumber, ...)
+INSERT INTO students (studentName,fatherName,mobileNumber, ...)
 VALUES ('wecode academy','academy',1234567899,...);
 ~~~
 
@@ -91,7 +91,7 @@ VALUES ('wecode academy','academy',1234567899,...);
 
 Es cammand ka use table me bina column name ka use kiye data insert karane ke liye kiya jata hai.lakin esme column name ka order pata hona chahiye.
 ~~~
-INSERT INTO table_name VALUES('wecode academy','academy',1234567899,...);
+INSERT INTO students VALUES('wecode academy','academy',1234567899,...);
 ~~~
 
 ### 7.Delete database in DBMS.
