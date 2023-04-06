@@ -24,8 +24,12 @@ USE wecode_academy;
 ### Create Table.
 
 Es command ka use database me table create karane ke liye hota hai.
-- **studentId** Column_name hai jisko humne  **INTEGER** datatype di hai eska matlab hai ki es column me sirf number datatype ki value jaygi. **UNSIGNED** ka matlab hai ki yhe negative me number nhi laga. **PRIMARY KEY** ka matlab hai ki record ko uniquely identify karega. **NOT NULL** ka matlab hai ki es column ki value null nhi ho sakti.
-**AUTO_INCREMENT** ka matlab hai ki **PRIMARY KEY** automatic increment hoti rahagi.
+
+- **studentId** Column_name hai jisko humne  **INTEGER** datatype di hai eska matlab hai ki es column me sirf number datatype ki value jaygi. 
+- **UNSIGNED** ka matlab hai ki yhe negative me number nhi laga.
+- **PRIMARY KEY** ka matlab hai ki record ko uniquely identify karega. 
+- **NOT NULL** ka matlab hai ki es column ki value null nhi ho sakti.
+- **AUTO_INCREMENT** ka matlab hai ki **PRIMARY KEY** automatic increment hoti rahagi.
  
 ~~~
 CREATE TABLE students(
@@ -466,6 +470,78 @@ SELECT * FROM students WHERE studentId >= ALL (SELECT studentId FROM students WH
 ANY operator ka use table me particular value ke sath koi record fill hai ya nhi yhe dekhane ke liye kiya jaya hai. or record fill hota hai to sub queri jo data retrun karti hai. os main queri se compare karte hai. comparision ke according main queri data return karti hai.
 ~~~
 SELECT * FROM students WHERE studentId <= ANY (SELECT studentId FROM students WHERE studentId > 4);
+~~~
+
+## CONSTRAINT in DBMS.
+
+Constraint ka use table create karte time table ke liye rules banane ke liye hota hai.
+
+~~~
+CREATE TABLE fees(
+feeId INTEGER UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+amount BIGINT NOT NULL CHECK (amount >= 3000),
+month VARCHAR(155) NOT NULL,
+feesCheck VARCHAR(155) DEFAULT 'Yes',
+sId INTEGER FOREIGN KEY(sId) REFERENCES students(studentId)
+);
+~~~
+
+- **UNSIGNED** ka matlab hai ki yhe negative me number nhi laga. 
+- **PRIMARY KEY** ka matlab hai ki record ko uniquely identify karega. 
+- **FOREIGN KEY** ka use do table ke bich relation bana ke liye hota hai.
+- **NOT NULL** ka matlab hai ki column ki value null nhi ho sakti.
+- **AUTO_INCREMENT** ka matlab hai ki **PRIMARY KEY** automatic increment hoti rahagi. 
+- **DEFAULT** ka matlab hai ki column me value insert nhi ki gai to ye default value insert ho jaygi.
+- **CHECK** constraint ka matlab hai ki column me condition ke accroding value insert ho sakti hai.
+
+## JOINs in DBMS.
+
+Joins ka use do ya do se jyada table ki infomation ek sath get karne ke liye hota hai.
+
+- #### INNER JOIN.
+
+Inner join ka use do ya do se jyada table ki coman record ko get karane ke liye hota hai.
+~~~
+SELECT * FROM students INNER JOIN fees ON student.sId IN(fees.sId);
+~~~ 
+
+- #### LEFT JOIN.
+
+Left join ka use students or fees ke coman record or students ke sare record get karane ke liye hota hai.
+~~~
+SELECT * FROM students LEFT JOIN fees ON student.sId IN(fees.sId);
+~~~
+
+- #### RIGHT JOIN.
+
+Right join ka use students or fees ke coman record or fees ke sare record get karane ke liye hota hai.
+~~~
+SELECT * FROM students RIGHT JOIN fees ON student.sId IN(fees.sId);
+~~~
+
+## MULTIPLE JOINs.
+
+MULTIPLE Joins ka use do se jyada table ki infomation ek sath get karne ke liye hota hai.
+
+- #### MULTIPLE INNER JOIN.
+
+Multiple inner join ka use do se jyada table ki coman record ko get karane ke liye hota hai.
+~~~
+SELECT * FROM students INNER JOIN fees ON student.sId IN(fees.sId) JOIN result ON student.sId IN(result.sId);
+~~~ 
+
+- #### MULTIPLE LEFT JOIN.
+
+Multiple left join ka use students or fees or result ke coman record or students ke sare record get karane ke liye hota hai.
+~~~
+SELECT * FROM students LEFT JOIN fees ON student.sId IN(fees.sId) LEFT JOIN result ON student.sId IN(result.sId);
+~~~
+
+- #### MULTIPLE RIGHT JOIN.
+
+Multiple right join ka use students or fees or result ke coman record or fees ke sare record get karane ke liye hota hai.
+~~~
+SELECT * FROM students RIGHT JOIN fees ON student.sId IN(fees.sId) RIGHT JOIN result ON student.sId IN(result.sId);
 ~~~
 
 
