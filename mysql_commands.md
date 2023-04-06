@@ -1,27 +1,27 @@
 # MySQL_Commands
 
-### 1.Create Database.
+## Create Database.
 
 Es command ka use DBMS me database create karane ke liye kiya jata hai.
 ~~~
 CREATE DATABASE wecode_academy;
 ~~~
 
-### 2.Show Databases.
+## Show Databases.
 
 Es command ka use DBMS me jitane bhi database hai onhe show karane ke liye hota hai.
 ~~~
 SHOW DATABASES;
 ~~~
 
-### 3. Use Database.
+## Use Database.
 
 Es command ka use database ko use karane ke liye hota hai.
 ~~~
 USE wecode_academy;
 ~~~
 
-### 4. Create Table.
+### Create Table.
 
 Es command ka use database me table create karane ke liye hota hai.
 - **studentId** Column_name hai jisko humne  **INTEGER** datatype di hai eska matlab hai ki es column me sirf number datatype ki value jaygi. **UNSIGNED** ka matlab hai ki yhe negative me number nhi laga. **PRIMARY KEY** ka matlab hai ki record ko uniquely identify karega. **NOT NULL** ka matlab hai ki es column ki value null nhi ho sakti.
@@ -40,7 +40,7 @@ pincode INTEGER NOT NULL
 );
 ~~~
 
-### 5.Alter Table.
+## Alter Table.
 
 - #### Add column in table.
 
@@ -67,7 +67,7 @@ ALTER TABLE students MODIFY COLUMN Age INTEGER;
 
 Es command ka use table ke  column ke name ko change karane ke liye kiya jata hai.
 ~~~
-ALTER TABLE students RENAME COLUMN City TO myCity;
+ALTER TABLE table_name RENAME COLUMN City TO myCity;
 ~~~
 
 - #### Drop column in table.
@@ -77,13 +77,13 @@ Es command ka use table me se column ko delete karane ke liye kiya jata hai.
 ALTER TABLE students DROP COLUMN City;
 ~~~
 
-### 6. Insert data in table.
+## Insert data in table.
 
 - #### Insert data in table with column name.
 
 Es command ka use table me column name ke sath data insert karane ke liye kiya jata hai.
 ~~~
-INSERT INTO students (studentName,fatherName,mobileNumber, ...)
+INSERT INTO table_name (studentName,fatherName,mobileNumber, ...)
 VALUES ('wecode academy','academy',1234567899,...);
 ~~~
 
@@ -91,24 +91,24 @@ VALUES ('wecode academy','academy',1234567899,...);
 
 Es cammand ka use table me bina column name ka use kiye data insert karane ke liye kiya jata hai.lakin esme column name ka order pata hona chahiye.
 ~~~
-INSERT INTO students VALUES('wecode academy','academy',1234567899,...);
+INSERT INTO table_name VALUES('wecode academy','academy',1234567899,...);
 ~~~
 
-### 7.Delete database in DBMS.
+## Delete database in DBMS.
 
 Es command ka use DBMS se database ko drop karane ke liye hota hai.
 ~~~
 DROP wecode_academy;
 ~~~
 
-### 8.Delete table in database.
+## Delete table in database.
 
 Es command ka use database me se table drop karane ke liye hota hai.
 ~~~
 DROP students;
 ~~~
 
-### 9.Select data from table.
+## Select data from table.
 
 - #### Get full record in table.
 
@@ -121,10 +121,10 @@ SELECT * FROM students;
 
 Es command ka use table me se specific column ka data get karane ke liye kiya jata hai.
 ~~~
-SELECT studentName, fatherName, mobileNumber FROM students;
+SELECT studentName, fatherName,mobileNumber FROM students;
 ~~~
 
-### 10.Select data from table with condition.
+## Select data from table with condition.
 
 - #### Single condition.
 
@@ -145,14 +145,14 @@ SELECT * FROM students WHERE studentId = 4 OR fatherName = 'academy';
 SELECT * FROM students WHERE studentId = 3 NOT mobileNumber = 343243242;
 ~~~
 
-### 11.Select unique data from table.
+## Select unique data from table.
 
 Es command ka use table me se unique data get karane ke liye kiya jata hai.
 ~~~
 SELECT DICTINCT * FROM students;
 ~~~
 
-### 12.Update data in table.
+## Update data in table.
 
 - #### Single column update in table.
 
@@ -168,7 +168,7 @@ Es command ka use table me multiple column ko update karane ke liye kiya jata ha
 UPDATE students SET studentName = 'wecode academy', mobileNumber = 1234567 WHERE studentId = 3;
 ~~~ 
 
-### 13.Delete data in table.
+## Delete data in table.
 
 - #### Delete all data in table.
 
@@ -184,21 +184,21 @@ Es command ka use table me se particular record ko delete karane ke liye kiya ja
 DELETE FROM students WHERE studentId = 1;
 ~~~
 
-### 14.Get limit data in table.
+## Get limit data in table.
 
 Es command ka use table me se limit data get karane ke liye liya jata hai.
 ~~~
 SELECT * FROM students LIMIT 2;
 ~~~
 
-### 15.temporary column name change.
+## temporary column name change.
 
 Es command ka use table ka data get karate time particular column ka name change karane ke liye hota hai.
 ~~~
 SELECT studentName AS sName FROM students;
 ~~~
 
-### 16.Get group by data in table.
+## Get group by data in table.
 
 Es cammand ka use yeh dekhane ke liye kiya jata hai. ki particular value ke sath kitane record table me fill hai.
 
@@ -216,7 +216,7 @@ Es command ka use table me se specific condition ke sath data ko group by get ka
 SELECT studentName FROM students WHERE studentId = 2 GROUP BY studentName;
 ~~~
 
-### 17.Get order by data in table.
+## Get order by data in table.
 
 - #### Get data by ascending order in table.
 
@@ -234,15 +234,14 @@ Es command ka use table me se descending order me data get karane ke liye kiya j
 SELECT * FROM students ORDER BY studentId DESC;
 ~~~
 
-### 18.Having in table.
+## Having in table.
 
 Es command ka use yhe dekhane ke liye kiya jata hai. ki particular value ke sath koi data table me fill hai ya nhi.
 ~~~
 SELECT * FROM students HAVING studentName = 'wecode';
 ~~~
 
-
-### 19.Insert data into a table using data from another table.
+## Insert data into a table using data from another table.
 
 Es command ka use another table ka data kisi or table me insert karane ke liye hota hai.lakin esme table1 or table2 ke column order same hone chahiye. 
 
@@ -263,7 +262,7 @@ INSERT INTO students SELECT * FROM students2 WHERE studentId = 3;
 INSERT INTO students(studentName,fatherName,...) SELECT * FROM students2 WHERE studentId = 5.
 ~~~
 
-### 20.Case in table.
+## Case in table.
 
 Es command ka use table me se data get karte time particular statement ke sath data dekhane ke liye kiya jata hai.
 
@@ -276,6 +275,199 @@ CASE
    ELSE 'fail'
 END AS result FROM students;
 ~~~   
+
+## Comments in MySQL.
+
+Comment ka use queri ko explain karane ke liye kiya jata hai.
+
+#### Single line comment.
+~~~
+-- comment
+~~~
+
+#### Multiple line comments
+~~~
+/* 
+comment 
+*/
+~~~
+
+## Aggregate functions in DBMS.
+
+Aggregate function ka use DBMS me record ko sum,count,avg,max,min karane ke liye hota hai.
+ 
+### Sum function.
+
+- #### Sum function without condition.
+
+Sum function ka use database me se numeric record ka sum karane ke liye hota hai. Without condition se studentFee table me se all month ki fees sum karga.
+~~~
+SELECT SUM(fees) FROM studentFee;
+~~~
+
+- #### Sum function with condition.
+
+Sum function ka use database me se numeric record ka sum karane ke liye hota hai. with condition se studentFee table me se only january month ki fees sum karga.
+~~~
+SELECT SUM(fees) FROM studentFee WHERE month = 'January';
+~~~
+
+### Count function.
+
+- #### Count function without condition.
+
+Count function ka use database me record ka count karane ke liye hota hai.Es queri me all studentId ka count karga.
+~~~
+SELECT COUNT(studentId) FROM students;
+~~~
+
+- #### Count function with condition.
+
+Count function ka use database me record ka count karane ke liye hota hai. Es queri me sirf unhi student ka count hoga jiski age 15 year se badi hai.
+~~~
+SELECT COUNT(studentId) FROM students WHERE studentAge > 15;
+~~~
+
+### Average function.
+
+- #### Average function without condition.
+
+Average function ka use database me se numeric record ka average get karane ke liye hota hai. Es queri me all student ki age ki average nikali jaygi.
+~~~
+SELECT AVG(age) FROM students;
+~~~
+
+- #### Average function with condition.
+
+Average function ka use database me se numeric record ka average get karane ke liye hota hai. Es queri me sirf unhi student ki age ki average nikali jaygi jinka name 'wecode' hai.
+~~~
+SELECT AVG(age) FROM students WHERE studentName = 'wecode';
+~~~
+
+### Max function.
+
+- #### Max function without condition.
+
+Max function ka use database me se numeric record me se maximum value get karane ke liye hota hai. Es queri me student me se kiski age sabse badi hai yhe get ki jaygi.
+~~~
+SELECT studentName,MAX(age) FROM students GROUP BY studentName LIMIT 1;
+~~~ 
+
+- #### Max function with condition.
+
+Max function ka use database me se numeric record me se maximum value get karane ke liye hota hai. Es queri me 'wecode' studentName me se kiski age maximum hai yhe get ki jaygi.
+~~~
+SELECT studentId,MAX(age) FROM students WHERE studentName = 'wecode' GROUP BY studentId LIMIT 1;
+~~~
+
+### Min function.
+
+- #### Min function without condition.
+
+Min function ka use database me se numeric record me se minimum value get karane ke liye hota hai. Es queri me student me se kiski age sabse choti hai yhe get ki jaygi.
+~~~
+SELECT studentName,MIN(age) FROM students GROUP BY studentName LIMIT 1;
+~~~ 
+
+- #### Min function with condition.
+
+Min function ka use database me se numeric record me se minimum value get karane ke liye hota hai. Es queri me 'wecode' studentName me se kiski age minimum hai yhe get ki jaygi.
+~~~
+SELECT studentId,MIN(age) FROM students WHERE studentName = 'wecode' GROUP BY studentId LIMIT 1;
+~~~
+
+## Other function.
+
+- ### Null function.
+
+Null funcrion ka use table me se data get karte time particular column ki null value ki jagah default value set karane ke liye hota hai.
+~~~
+SELECT studentName,IF NULL(mobileNumber, 9843853847) FROM students;
+~~~
+
+## Logical operator in DBMS.
+
+- #### AND operator.
+
+AND operator ka use multiple condition lagane ke liye kiya jata hai. Esme all condition true hone per hi koi queri data return karti hai.
+~~~
+SELECT * FROM students WHERE studentName = 'wecode' AND studentId = 1;
+~~~
+
+- #### OR operator.
+
+OR operator ka use multiple condition lagane ke liye kiya jata hai. Esme koi ek  condition true hone per hi koi queri data return karti hai. Jo condition true hogi oske related data return hoga. ager all condition true hoti hai to onke letated data return hoga.
+~~~
+SELECT * FROM students WHERE studentName = 'wecode'  OR studentId = 5;
+~~~
+
+- #### NOT operator.
+
+NOT operator me jo condition true hoti hai oska data return nhi hota hai. oske alava queri all data return karti hai. Es queri me studentId 5 ka data return nhi hoga.
+~~~
+SELECT * FROM students WHERE NOT studentId = 5;  
+~~~
+
+- #### IN operator.
+
+IN operator ka use multiple condition ko sort me lagane ke liye kiya jata hai. Esme jo condition true hogi queri oska data return karti jaygi.
+~~~
+SELECT * FROM students WHERE studentId IN (1,2,3,4,5);
+~~~
+
+- #### LIKE operator.
+
+LIKE operator ka use asi situation me kiya jata hai jaha hum value ka chota part yad ho or osi value ka data lena ho.
+
+> ##### LIKE with % searchValue.
+
+% se pahal kuch bhi ho sakta hai lakin oske aage searchValue honi chahiye.
+~~~
+SELECT * FROM students WHERE studentName LIKE '%khan';
+~~~
+
+> ##### LIKE with % searchValue %;
+
+% se pahal or % ke bade kuch bhi ho sakta hai. lakin bich me searchValue honi chahiye.
+~~~
+SELECT * FROM students WHERE studentEmail LIKE '%khan12@gmail%';
+~~~
+
+> ##### LIKE with searchValue %
+
+% ke bade kuch bhi ho sakta hai lakin pahal searchValue honi chahiye.
+~~~
+SELECT * FROM students WHERE mobileNuber LIKE '1234%';
+~~~
+
+- #### BETWEEN operator.
+
+BETWEEN operator ka use two condition ke bich ka record get karane ke liye kiya jata hai. 
+~~~
+SELECT * FROM students WHERE studentId BETWEEN 5 AND 8;
+~~~
+
+- #### EXISTS operator.
+
+EXISTS operator ka use table me particular value ke sath koi record fill hai ya nhi yhe dekhane ke liye kiya jaya hai. or particulr value ke sath record fill hota hai to queri table me se all data return karti hai.
+~~~
+SELECT * FROM students WHERE EXISTS(SELECT * FROM students WHERE studentName = "wecode");
+~~~
+
+- #### ALL operator.
+
+All operator ka use table me particular value ke sath koi record fill hai ya nhi yhe dekhane ke liye kiya jaya hai. or record fill hota hai to sub queri jo data retrun karti hai. os main queri se compare karte hai. comparision ke according main queri data return karti hai.
+~~~
+SELECT * FROM students WHERE studentId >= ALL (SELECT studentId FROM students WHERE fatherName = 'wecode khan');
+~~~
+
+- #### ANY operator.
+
+ANY operator ka use table me particular value ke sath koi record fill hai ya nhi yhe dekhane ke liye kiya jaya hai. or record fill hota hai to sub queri jo data retrun karti hai. os main queri se compare karte hai. comparision ke according main queri data return karti hai.
+~~~
+SELECT * FROM students WHERE studentId <= ANY (SELECT studentId FROM students WHERE studentId > 4);
+~~~
+
 
 
 
