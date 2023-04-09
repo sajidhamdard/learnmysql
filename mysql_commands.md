@@ -3,6 +3,13 @@
 ## Create Database.
 
 Es command ka use DBMS me database create karane ke liye kiya jata hai.
+
+Syntax :
+~~~
+create database databasename
+~~~
+
+Example : 
 ~~~
 CREATE DATABASE wecode_academy;
 ~~~
@@ -31,7 +38,7 @@ Es command ka use database me table create karane ke liye hota hai.
 - **NOT NULL** ka matlab hai ki es column ki value null nhi ho sakti.
 - **AUTO_INCREMENT** ka matlab hai ki **PRIMARY KEY** automatic increment hoti rahagi.
  
-~~~
+```sql
 CREATE TABLE students(
 studentId INTEGER UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
 studentName VARCHAR(155) NOT NULL,
@@ -42,7 +49,7 @@ state VARCHAR(155) NOT NULL,
 city VARCHAR(155) NOT NULL,
 pincode INTEGER NOT NULL
 );
-~~~
+```
 
 ## Alter Table.
 
